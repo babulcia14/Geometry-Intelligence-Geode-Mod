@@ -1,77 +1,47 @@
-# Geometry Intelligence AI — 1.0.0-alpha.1
+# Geometry Intelligence AI - 1.0.0-alpha.1
 
-**Your AI Companion for Geometry Dash.** Projekt C++/Geode z osobnym, lokalnym silnikiem Python i własnymi wagami małego Transformera trenowanego od losowej inicjalizacji. Bez obowiązkowego klucza API i bez pobierania gotowego modelu językowego.
+**Your AI companion for Geometry Dash.** A C++/Geode project with spatial, electrical Python and external weights for a small Transformer trained from random initialization. No API key required and no download of a pre-built language model.
 
-To **wersja rozwojowa do testów**, a nie deklaracja ukończenia wszystkich funkcji stabilnego 1.0. Rdzeń, integracje, trening, serwer i paczka moda są rzeczywiste. Jakość swobodnej rozmowy małego modelu jest obecnie niewystarczająca. Fakty z API są wyświetlane jako oznaczony odczyt narzędzi; wybór narzędzi w domyślnym silniku opiera się na regułach. Nie przypisujemy tych zdolności sieci neuronowej.
+This is a **development version for testing**, not a declaration of completion of all 1.0 functionalities. The core, integrations, training, server, and modpack are real. The quality of free communication of the small model is available. API facts are marked as read tool; tool selection is in default rule-based operation. We do not attribute these capabilities to the neural network.
 
-## Najpierw: wersja gry
+## first: game version
 
-Paczka jest zbudowana dla **Windows x64, GD 2.2081, Geode 5.11.2**. Geode 5.11.2 był najnowszym oficjalnym wydaniem sprawdzonym 21.10.2026. Jego opis nadal wskazuje 2.2081 jako główny cel i jednocześnie wymienia poprawki trybu zgodności dla nowszego GD 2.209: [opis wydania](https://github.com/geode-sdk/geode/releases/tag/v5.11.2).
+The package is built for **Windows x64, GD 2.2081, Geode 5.11.2**. Geode 5.11.2 was last reviewed on October 21, 2026. Its description is still released as a primary goal and is subject to compatibility regulations for the newer GD 2.209: [release review](https://github.com/geode-sdk/geode/releases/tag/v5.11.2).
 
-**Nie potwierdzono działania tego moda w GD 2.209 ani jego wyglądu w uruchomionej grze.** Nie zmieniaj numeru `gd` w `mod.json`, żeby ominąć sprawdzanie zgodności. Sam numer nie dostosuje adresów funkcji i struktur gry. Nie włączaj wymuszonej zgodności na podstawie tego README.
+**This mod has not been confirmed to work in GD 2.209 or be used in a running game.** Do not change the `gd` number in `mod.json` to bypass compatibility checks. The number alone will not adjust the addresses of game functions and structures. Do not rule out forced compatibility based on this README.
 
-## Uruchomienie na tym komputerze
+## Running on this computer
 
-1. Otwórz folder projektu. W środowisku, w którym przygotowano projekt, `.venv`, biblioteki CPU i wytrenowane wagi są już przygotowane.
-2. Kliknij **Start_AI.cmd**. Pozostaw okno otwarte. Po załadowaniu wag zobaczysz `GI ready: http://127.0.0.1:18765/v1`.
-3. Kliknij **Check_AI.cmd**. Powinien pokazać `status: ready`, `origin: random-initialization` i model `gi-tiny`. To sprawdzenie serwera, nie ocena jego inteligencji.
-4. Jeśli masz zgodne GD/Geode, zamknij grę i skopiuj `dist/aer.geometry-intelligence.geode` do folderu `geode/mods` w katalogu gry. Domyślna ścieżka Steam: `C:\Program Files (x86)\Steam\steamapps\common\Geometry Dash\geode\mods`. Projekt nie instaluje moda automatycznie i nie zmienia zapisów gry.
-5. Uruchom grę. Mod dodaje przycisk **GI** w menu głównym, pauzie poziomu i ekranie własnego poziomu. Wygląd oraz interakcje tych ekranów nadal wymagają testu w grze.
-6. W oknie GI wybierz **Połączenie**. Domyślne ustawienia to adres `http://127.0.0.1:18765/v1` i model `gi-tiny`.
-7. Aby włączyć dane internetowe, w **Ustawienia → Privacy** zaznacz **Allow Public APIs / Zezwól na publiczne API**. **Allow Remote AI** pozostaw wyłączone dla lokalnego serwera.
-8. Wypróbuj `What is the current Top 1 Demon?`, a następnie `Who created it?`. Spróbuj też `Jak działa Move Trigger?` oraz `What is BetterEdit?`.
+1. Open the project folder. In the environment where the project was prepared, `.venv`, the CPU library, and the trained weights are already prepared.
+2. Click **Start_AI.cmd**. The window opens. After revealing the weights, `GI is ready: http://127.0.0.1:18765/v1`. 3. Click **Check_AI.cmd**. It should have status: ready, origin: random-initialization, and model 'gi-tiny'. This is a server usage, not an assessment of its intelligence.
+4. If you have a GD/Geode-compatible server, close the game and copy 'dist/aer.geometry-intelligence.geode' to the 'geode/mods' folder in your game directory. The default Steam path is: 'C:\Program Files (x86)\Steam\steamapps\common\Geometry Dash\geode\mods'. The project does not automatically install the mod and does not change saved games.
+5. Launch the game. The mod has added a **GI** button to the menu, level pause, and custom levels. The appearance and interactions of these screens still require in-game testing.
+6. In the GI window, select **Connect**. Default settings are at `http://127.0.0.1:18765/v1` and the `gi-tiny` model.
+7. To enable internet data, in **Settings → Privacy**, select **Allow public APIs / Allow public APIs**. **Allow remote intelligence** leaves communication to the local server.
+8. Try `What is the current Top 1 Demon?`, then `Who created it?`. Others also include `How does Move Trigger work?` and `What is BetterEdit?`.
 
-Zamknięcie okna czatu lub **Stop** anuluje bieżące zadanie klienta. `Ctrl+C` w oknie serwera zatrzymuje AI. Serwer uruchamiasz osobno przed użyciem moda; mod nie instaluje Pythona ani nie uruchamia programów w tle.
+Closing the chat window or pressing **Stop** cancels the immediate client task. `Ctrl+C` in the server window removes the AI. The server starts before using the mod; the mod does not install Python or run programs in the background.
 
-## Na innym komputerze
+## On another computer
 
-Rozpakuj pełne archiwum `Geometry-Intelligence-1.0.0-alpha.1.zip`. Zawiera kod, paczkę `.geode`, własne wagi do inferencji, dane treningowe, skrypty i dokumentację. Nie zawiera Geode SDK, kompilatora, PyTorch ani gry.
+Unzip the full `Geometry-Inteligencja-1.0.0-alfa.1.zip` archive. It contains the code, the `.geode` package, custom inference weights, training data, scripts, and documentation. It does not include the Geode SDK, compiler, PyTorch, or the game.
 
-Zainstaluj **Python 3.11–3.14 x64** z [python.org](https://www.python.org/downloads/windows/), zaznaczając dodanie do PATH. Kliknij **Setup_AI.cmd**, a po zakończeniu **Start_AI.cmd**. Setup pobiera PyTorch CPU i zależności z oficjalnego indeksu PyTorch. Nie pobiera cudzych wag. Pierwsza instalacja wymaga internetu i miejsca na biblioteki. Nie trzeba płacić za API; komputer zużywa energię.
+I installed **Python 3.11–3.14 x64** from [python.org](https://www.python.org/downloads/windows/), marking the comment in the PATH. Click **Setup_AI.cmd**, and after selecting **Start_AI.cmd**. Configure the PyTorch CPU download based on the official PyTorch index. Do not download third-party weights. The initial installation requires internet access and library space. There is no need to pay for the API; the computer takes over the user experience.
 
-Skrypty `.cmd` ustawiają `ExecutionPolicy Bypass` wyłącznie dla własnego procesu PowerShell. Nie zmieniają globalnej polityki Windows.
+The `.cmd` scripts set `ExecutionPolicy Bypass` exclusively for the native PowerShell process. They do not change the global Windows policy.
 
-## Co jest zaimplementowane
+## What is implemented
 
-| Część | Rzeczywiste zachowanie |
+| Part | Actual behavior |
+
 |---|---|
-| GI Core | Pętla model → narzędzie → dowody → odpowiedź, limity narzędzi i kontekstu, anulowanie, błędy |
-| GI Language Engine | Własny Transformer PyTorch, tokenizer UTF-8, trening od zera, checkpointy, serwer i prawdziwy streaming tokenów |
-| GI Search | Reguły PL/EN dla najczęstszych pytań; przy opcjonalnym większym silniku wybór przez jego tool calling |
-| GI Knowledge | 22 dwujęzyczne dokumenty referencyjne; mechaniki, oficjalne poziomy bazowego 2.2, edytor i zakresy niezweryfikowane |
-| Pointercrate | Ranking, wyszukiwanie, twórcy/weryfikator/publikujący, gracze, odczyt rekordów, datowane lokalne obserwacje |
-| Geode | Wyszukiwanie oficjalnego indeksu z filtrem GD/Geode/Windows, autorzy, opisy i wersje |
-| Music | Darmowe metadane MusicBrainz; sprawdzanie podanego Song ID przez GD, jeśli serwer pozwala; opcjonalny Brave dla odkrywania stron Newgrounds |
-| Level | Parser metadanych publicznego protokołu GD, wyszukiwanie nazwy/ID; dobrowolny odczyt danych widocznego poziomu |
-| GI Memory | Kontekst rozmowy, historia w RAM, opcjonalny zapis SQLite-free w JSON szyfrowanym Windows DPAPI, TTL cache |
-| GI Interface | Ciemne okno, polski font, historia z przewijaniem stron, ustawienia Geode, kopiowanie, źródła, stop, usuwanie danych |
-
-**Ograniczenia:** nie ma ogólnego rozumienia języka na poziomie współczesnych dużych modeli, wyszukiwania podobieństwa audio, kompletnej tabeli ikon/nagród ani pełnej encyklopedii społeczności. Darmowy web search obejmuje Wikipedię, a wyszukiwanie muzyki MusicBrainz. Przyjęcie przez oficjalny indeks Geode nie jest potwierdzone. Zobacz [STATUS.md](docs/STATUS.md) i [TEST_REPORT.md](docs/TEST_REPORT.md).
-
-## Przykłady pytań
-
-- `Show me the Top 10 hardest demons.`
-- `Who created Tidal Wave?` / `Kto stworzył Tidal Wave?`
-- `What position is Bloodbath?`
-- `Show me information about player "Zoink".`
-- `Find me a mod for improving the level editor.`
-- `How do I make an object rotate forever?`
-- `Jak działa Static Camera?`
-- `Find a calm song for a space level.` — to wyszukiwanie tekstowych metadanych, nie odsłuch ani gwarancja użycia w GD.
-- `Tell me about this level.` — włącz Game Context i otwórz GI z pauzy/ekranu własnego poziomu.
-- `Find level "Nine Circles".` — rzeczywiste zapytanie; w testach serwer GD odmówił dostępu kodem 403.
-
-W małym silniku nietypowe sformułowanie może nie trafić do reguły. Wtedy odpowiedź generuje model, którego tekst może być niespójny. Podawanie dokładnej nazwy w cudzysłowie pomaga narzędziom. Rankingu nie zapisano na stałe w kodzie.
-
-## Dokumentacja i rozwój
-
-- [Architektura i mapa plików](docs/ARCHITECTURE.md)
-- [Własne wagi, dane, sprzęt i koszty](docs/TRAINING.md)
-- [Karta modelu i wyniki eksperymentów](docs/MODEL_CARD.md)
-- [Dokładna kompilacja C++ i .geode](docs/BUILD.md)
-- [API, źródła i ograniczenia dostępu](docs/SOURCES.md)
-- [Prywatność i ustawienia](docs/PRIVACY.md)
-- [Wykonane testy](docs/TEST_REPORT.md)
-- [Etapy i brakujące elementy stabilnego wydania](docs/STATUS.md)
-
-Najważniejszy następny krok dla jakości AI to większy, legalnie uzyskany i sprawdzony korpus PL/EN oraz rzetelna ewaluacja. Wielokrotne uczenie tych samych kilkuset przykładów nie zastąpi tych danych.
+| GI Core | Model → tool → action → response loop, tool and context limits, cancellation, errors |
+| GI Language Engine | Custom PyTorch Transformer, UTF-8 tokenizer, training from scratch, checkpoints, server, and real token streaming |
+| Search GI | PL/EN rules for future questions; with optional larger engine selection by its invoker |
+| GI Knowledge | 22 bilingual reference documents; mechanics, base level 2.2 documentation, editor, and unverified scopes |
+| Pointer Box | Ranking, search, creators/verifiers/publishers, reading, reading records, local data observations |
+| Geoda | Search the official index with GD/Geode/Windows filtering, authors, description, and versions |
+| Music | Free MusicBrainz metadata; GD-enabled track ID lookup, server-enabled; optional Brave for discovering Newgrounds sites |
+| Level | Metadata parser questioning GD, name/ID lookup; reading registration data |
+| GI memory | Conversation context, history in RAM, optional SQLite-free storage in Windows DPAPI-encrypted JSON, TTL cache |
+| GI interface | Dark window, Polish font, history with page scrolling, Geode settings
