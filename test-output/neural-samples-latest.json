@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-10-21T13:26:47.339374+00:00",
+  "origin": "random-initialization",
+  "step": 1200,
+  "parameters": 384288,
+  "samples": [
+    {
+      "question": "Hello! What can you do?",
+      "answer": "Kerete Gemumondesere s Gendemongintry montl ins trans mevansis antinswactavelame. I I fond and aratare s bed lectom matationtion.",
+      "seconds": 0.329,
+      "finish_reason": "stop",
+      "generated_tokens": 129
+    },
+    {
+      "question": "Cześć, kim jesteś?",
+      "answer": "Ni zm mymazeni rodena. Ge ma stani nie zma sta sznaganiaw kodenia. howie sprzyma najes modła u strzany we sza.",
+      "seconds": 0.171,
+      "finish_reason": "stop",
+      "generated_tokens": 111
+    },
+    {
+      "question": "Explain what a group is in a level editor.",
+      "answer": "K Sprameringevemitaces tinggetan. inte ditig anting mexthe d eracon. ts isthesmes ate mete mongang.",
+      "seconds": 0.16,
+      "finish_reason": "stop",
+      "generated_tokens": 99
+    },
+    {
+      "question": "Napisz dwa zdania o tworzeniu poziomów.",
+      "answer": "K Sprawderawdła zawdnoź wdz pracinialiera w w mości prakpowa ni wi kołagrzma grze.",
+      "seconds": 0.121,
+      "finish_reason": "stop",
+      "generated_tokens": 86
+    },
+    {
+      "question": "I am frustrated because this level is hard. Can you help?",
+      "answer": "K oreteve osive secefe tins paticarong le timartive meion fetesate s tion. titioolstis ston on.",
+      "seconds": 0.186,
+      "finish_reason": "stop",
+      "generated_tokens": 95
+    },
+    {
+      "question": "What is the current Top 1 Demon?",
+      "answer": "Kivetive as me retes aste caturantint cres camet winintet g s s vextint practemp lementesiteon ted s.",
+      "seconds": 0.169,
+      "finish_reason": "stop",
+      "generated_tokens": 101
+    }
+  ],
+  "evaluation": "Raw observations, no automatic claim of correctness. Ranking question deliberately bypasses tools to expose model limits."
+}

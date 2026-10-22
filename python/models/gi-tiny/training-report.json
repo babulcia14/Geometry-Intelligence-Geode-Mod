@@ -1,0 +1,24 @@
+{
+  "created_utc": "2026-10-21T08:21:31.556850+00:00",
+  "seed": 20261021,
+  "parameters": 384288,
+  "dataset_sha256": "c5595de099d672e8cb4e5c7c40477d071f61664c6b310f531e0144c9315e1f95",
+  "training_records": 90,
+  "validation_records": 10,
+  "training_bytes": 34302,
+  "sources": [
+    "project-authored-synthetic-2026-10-21"
+  ],
+  "licenses": [
+    "project training permission; AI-authored factual paraphrases"
+  ],
+  "device": "cpu",
+  "torch_version": "2.14.1+cpu",
+  "limitations": "Tiny starter corpus; not a validated conversational assistant. No pretrained weights.",
+  "step": 1200,
+  "train_loss": 1.4469832181930542,
+  "validation_loss": 3.2928223311901093,
+  "elapsed_seconds": 161.54,
+  "lr": 0.00015,
+  "best_validation_loss": 2.6172977685928345
+}

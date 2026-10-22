@@ -1,0 +1,43 @@
+{
+  "format": 1,
+  "origin": "random-initialization",
+  "config": {
+    "context": 256,
+    "width": 96,
+    "layers": 3,
+    "heads": 4,
+    "dropout": 0.1
+  },
+  "step": 400,
+  "metadata": {
+    "created_utc": "2026-10-21T13:28:58.505184+00:00",
+    "seed": 20261021,
+    "parameters": 384288,
+    "dataset_sha256": "e12d02b66d5564b83b41275d78fe78e9c3045dd1c9cf0d65fc91ca97cc4bf68d",
+    "training_records": 354,
+    "validation_records": 30,
+    "training_bytes": 220397,
+    "sources": [
+      "project-authored-reference-paraphrases-2026-10-21",
+      "project-authored-synthetic-2026-10-21"
+    ],
+    "licenses": [
+      "project training permission; AI-authored factual paraphrases",
+      "project training permission; original AI-authored notes, not source documents"
+    ],
+    "device": "cpu",
+    "torch_version": "2.14.1+cpu",
+    "limitations": "Tiny starter corpus; not a validated conversational assistant. No pretrained weights.",
+    "step": 400,
+    "train_loss": 2.3958663940429688,
+    "validation_loss": 2.827390134334564,
+    "elapsed_seconds": 48.11,
+    "lr": 0.0009791990194254402,
+    "best_validation_loss": 2.827390134334564
+  },
+  "export": {
+    "source_run": "gi-domain",
+    "source_file": "best.pt"
+  },
+  "sha256": "95057a0284b8dc3b983ffae84b14784e492818e6f57359e89e2c92a3dc596bbe"
+}

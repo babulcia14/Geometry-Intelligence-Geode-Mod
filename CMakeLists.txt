@@ -1,0 +1,51 @@
+cmake_minimum_required(VERSION 3.25)
+set(CMAKE_MSVC_DEBUG_INFORMATION_FORMAT "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>")
+set(CMAKE_TRY_COMPILE_CONFIGURATION Release)
+project(GeometryIntelligence VERSION 1.0.0 LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL")
+option(GI_BUILD_MOD "Build the Windows Geode mod" ON)
+option(GI_BUILD_TESTS "Build standalone core tests and API probe" ON)
+
+add_library(gi_core STATIC
+    src/utils/Text.cpp src/utils/Validation.cpp
+    src/storage/Store.cpp src/storage/Credentials.cpp
+    src/api/Http.cpp src/api/GameApi.cpp src/api/KnowledgeApi.cpp src/api/FreeSearch.cpp
+    src/knowledge/Knowledge.cpp src/ai/Engine.cpp src/ai/Stream.cpp)
+target_include_directories(gi_core PUBLIC include third_party)
+if(MSVC)
+    target_compile_options(gi_core PUBLIC /utf-8 /EHsc /W4 /permissive-)
+    target_compile_definitions(gi_core PUBLIC NOMINMAX WIN32_LEAN_AND_MEAN)
+endif()
+if(WIN32)
+    target_link_libraries(gi_core PUBLIC Advapi32 Crypt32)
+endif()
+
+if(GI_BUILD_MOD)
+    if(NOT WIN32)
+        message(FATAL_ERROR "Geometry Intelligence 1.0.0 currently targets Windows x64.")
+    endif()
+    if(NOT DEFINED ENV{GEODE_SDK})
+        message(FATAL_ERROR "Set GEODE_SDK to the Geode 5.11.2 SDK directory. See README.md.")
+    endif()
+    add_library(${PROJECT_NAME} SHARED src/main.cpp src/api/GeodeHttp.cpp src/api/WinHttp.cpp
+        src/ui/AssistantPopup.cpp src/ui/Controller.cpp src/ui/GameContext.cpp)
+    target_link_libraries(${PROJECT_NAME} PRIVATE gi_core Winhttp)
+    # UI uses explicitly generated glyphs including Polish characters.
+    set(GEODE_DISABLE_PRECOMPILED_HEADERS ON CACHE BOOL "" FORCE)
+    set(GEODE_DONT_INSTALL_MODS ON CACHE BOOL "" FORCE)
+    add_subdirectory("$ENV{GEODE_SDK}" "${CMAKE_BINARY_DIR}/geode")
+    setup_geode_mod(${PROJECT_NAME} LINK_TYPE PRIVATE DONT_INSTALL)
+endif()
+
+if(GI_BUILD_TESTS)
+    enable_testing()
+    add_executable(gi_tests tests/core_tests.cpp)
+    target_link_libraries(gi_tests PRIVATE gi_core)
+    add_test(NAME core COMMAND gi_tests "${CMAKE_CURRENT_SOURCE_DIR}")
+    if(WIN32)
+        add_executable(gi_probe tests/api_probe.cpp src/api/WinHttp.cpp)
+        target_link_libraries(gi_probe PRIVATE gi_core Winhttp)
+    endif()
+endif()

@@ -1,0 +1,25 @@
+{
+  "checked_at": "2026-10-21T19:13:18.861160+00:00",
+  "health": {
+    "status": "ready",
+    "model": "gi-tiny",
+    "origin": "random-initialization",
+    "parameters": 384288,
+    "training_step": 400
+  },
+  "models": {
+    "object": "list",
+    "data": [
+      {
+        "id": "gi-tiny",
+        "object": "model",
+        "owned_by": "local-project"
+      }
+    ]
+  },
+  "network_stream": "PASS",
+  "chunks": 65,
+  "finish_reason": "length",
+  "output": "[Experimental model trained from scratch; text may be incoherent and incorrect.]\nKe amacoralame ather s ten n spactinthele ictare p amaion fe s a",
+  "quality": "NOT PASSED: transport success does not imply coherent conversation"
+}

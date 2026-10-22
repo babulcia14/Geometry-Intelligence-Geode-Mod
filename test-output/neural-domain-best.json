@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-10-21T13:39:31.582659+00:00",
+  "origin": "random-initialization",
+  "step": 400,
+  "parameters": 384288,
+  "samples": [
+    {
+      "question": "Hello! What can you do?",
+      "answer": "Ke amacoralame ather s ten n spactinthele ictare p amaion fe s ant titin cotithe lath coonge ther Ans s ct tane tilime conethen iman can ctaatanl ran the s anom crtinore tan rever cor on fon tents c raton tiontiteunten ilserecon ntherl tinn. t are t tasen. t rononnot latior on lede t s ort tititot t",
+      "seconds": 0.468,
+      "finish_reason": "length",
+      "generated_tokens": 300
+    },
+    {
+      "question": "Cześć, kim jesteś?",
+      "answer": "Ke grach iat trz zgo o tenełę czini mie iczarobruprai w koła ie przeniełutma prze wakogo ścenią stułycze wa. mukonieje niemie sznię atani j wi z pą pośczyśczyśnia mi rzierz popobujeni pośrupanią podów sz iekakuci znę.",
+      "seconds": 0.282,
+      "finish_reason": "stop",
+      "generated_tokens": 233
+    },
+    {
+      "question": "Explain what a group is in a level editor.",
+      "answer": "Kthe acor atititithe s ten aus actintinde ictare t amaion fe e ant titin cotithe lath coonge ther con s ct s ont tic s coneth con t and con atand r ar con s ser cthe fre tat rever cor on fond ous therr cantion cerunten ilserecon atantl tinn. t are t tasen. t cononnot latior on lede t s art titist pi",
+      "seconds": 0.438,
+      "finish_reason": "length",
+      "generated_tokens": 300
+    },
+    {
+      "question": "Napisz dwa zdania o tworzeniu poziomów.",
+      "answer": "Keła myw zami zywakostronia spaczini mie icza powkomadow koła j pypów poziema prze wakogo łaj kosj pi z gozietaczykoniej pruj po sanię atanybraw odo sz pośczyśczyśni rowia porz pozy pokuci nierze imienicie.",
+      "seconds": 0.293,
+      "finish_reason": "stop",
+      "generated_tokens": 214
+    },
+    {
+      "question": "I am frustrated because this level is hard. Can you help?",
+      "answer": "Ke amacoratame ather s ten auspactintinde ictare r amaion fe e ant titin cotithe lath coonge ther Ans s ct s ofitilimeron eto comon an n le atanl ran the a an a cthe fre tnd rover cor on pl unous theroton tiontiteunten ilserecon ntherl tinn. t are t tasen. t rononnot latior on lede t on rt tititot t",
+      "seconds": 0.471,
+      "finish_reason": "length",
+      "generated_tokens": 300
+    },
+    {
+      "question": "What is the current Top 1 Demon?",
+      "answer": "Ke amacor atiticthen s ten aus ac t tinde ictare r amaion fe e ant titin cotithe lath coonge ther con s ct s on timime conets comon and con atanl ran the s an a cthe fre tatirover cor on pl unontstheroton tiontiteunten ilserecon ntherl tinn. t are t tasen. t rononnot latior on lede t s ort tititot t",
+      "seconds": 0.418,
+      "finish_reason": "length",
+      "generated_tokens": 300
+    }
+  ],
+  "evaluation": "Raw observations, no automatic claim of correctness. Ranking question deliberately bypasses tools to expose model limits."
+}

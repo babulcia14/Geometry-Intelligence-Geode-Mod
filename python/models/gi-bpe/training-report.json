@@ -1,0 +1,30 @@
+{
+  "created_utc": "2026-10-21T13:49:53.400604+00:00",
+  "seed": 20261021,
+  "parameters": 427296,
+  "dataset_sha256": "e12d02b66d5564b83b41275d78fe78e9c3045dd1c9cf0d65fc91ca97cc4bf68d",
+  "training_records": 354,
+  "validation_records": 30,
+  "training_bytes": 220397,
+  "sources": [
+    "project-authored-reference-paraphrases-2026-10-21",
+    "project-authored-synthetic-2026-10-21"
+  ],
+  "licenses": [
+    "project training permission; AI-authored factual paraphrases",
+    "project training permission; original AI-authored notes, not source documents"
+  ],
+  "device": "cpu",
+  "torch_version": "2.14.1+cpu",
+  "tokenizer_merges": 512,
+  "context": 192,
+  "training_token_positions": 43541,
+  "training_recipe": "assistant-boundary crops v2; seed and weights alone do not reproduce old v1 runs",
+  "limitations": "Tiny starter corpus; not a validated conversational assistant. No pretrained weights.",
+  "step": 4000,
+  "train_loss": 0.3041713833808899,
+  "validation_loss": 8.43874841928482,
+  "elapsed_seconds": 8789.32,
+  "lr": 0.00015,
+  "best_validation_loss": 4.971711993217468
+}

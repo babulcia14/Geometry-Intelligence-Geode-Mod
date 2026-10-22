@@ -1,0 +1,26 @@
+test_bpe_neural_checkpoint (test_model.ModelTests.test_bpe_neural_checkpoint) ... ok
+test_checkpoint_roundtrip (test_model.ModelTests.test_checkpoint_roundtrip) ... ok
+test_no_future_leak (test_model.ModelTests.test_no_future_leak) ... ok
+test_own_tokenizer_roundtrip (test_model.ModelTests.test_own_tokenizer_roundtrip) ... ok
+test_real_gradient_training (test_model.ModelTests.test_real_gradient_training) ... ok
+test_split_and_masking (test_model.ModelTests.test_split_and_masking) ... ok
+test_utf8 (test_model.ModelTests.test_utf8) ... ok
+test_ambiguous_demon_does_not_pick_first (test_model.RoutingTests.test_ambiguous_demon_does_not_pick_first) ... ok
+test_context_followup (test_model.RoutingTests.test_context_followup) ... ok
+test_detail_after_search (test_model.RoutingTests.test_detail_after_search) ... ok
+test_failure_does_not_become_fact (test_model.RoutingTests.test_failure_does_not_become_fact) ... ok
+test_game_context_and_note_language (test_model.RoutingTests.test_game_context_and_note_language) ... ok
+test_no_invented_song_id (test_model.RoutingTests.test_no_invented_song_id) ... ok
+test_tool_allowlist (test_model.RoutingTests.test_tool_allowlist) ... ok
+test_top_and_editor (test_model.RoutingTests.test_top_and_editor) ... ok
+test_busy (test_model.ServerTests.test_busy) ... ok
+test_health (test_model.ServerTests.test_health) ... ok
+test_model_missing (test_model.ServerTests.test_model_missing) ... ok
+test_origin_rejected (test_model.ServerTests.test_origin_rejected) ... ok
+test_real_neural_stream (test_model.ServerTests.test_real_neural_stream) ... ok
+test_stream_wire (test_model.ServerTests.test_stream_wire) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 3.654s
+
+OK

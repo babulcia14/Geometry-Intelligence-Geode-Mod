@@ -1,0 +1,17 @@
+.tooling/
+.research/
+build*/
+dist/
+.vs/
+.vscode/
+*.user
+*.pdb
+*.log
+__pycache__/
+.env
+config.local.json
+test-output/
+*.key
+.venv/
+python/models/
+python/.pytest_cache/

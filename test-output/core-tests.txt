@@ -1,0 +1,58 @@
+PASS UTF-8 URL encoding
+PASS URL decoding
+PASS UTF-8 truncation boundary
+PASS Reject trailing integer garbage
+PASS Description base64
+PASS Malformed base64 rejected
+PASS Loopback URL recognized
+PASS Loopback lookalike not trusted
+PASS Remote chat requires consent
+PASS Remote cleartext rejected
+PASS URL credentials rejected
+PASS Endpoint query rejected
+PASS Unsafe source scheme rejected
+PASS Invalid API JSON rejected
+PASS Tool bounds enforced
+PASS Cancellation token honored
+PASS HTTP 429 surfaced
+PASS Rate-limit backoff prevents next request
+PASS No transport call during backoff
+PASS Body limit enforced
+PASS HTTP 500 surfaced
+PASS Cache hit labeled
+PASS Cache preserves retrieval date
+PASS Expired data not used as current
+PASS Cache persisted and reloaded
+PASS Cache opt-out honored
+PASS Clear cache
+PASS Encrypted history round trip
+PASS History has no plaintext message
+PASS Corrupt history fails without replacement
+PASS Corrupt original preserved
+PASS History deletion
+PASS Platformer moons parsing
+PASS Level creator mapping
+PASS Level rating tier parsing
+PASS Empty level search is not fabricated
+PASS HTML is not accepted as level data
+PASS Song title decoded
+PASS Missing song fields not invented
+PASS Unavailable song is marked unverified
+PASS Mismatched Song ID rejected
+PASS SSE fragmented UTF-8 preserved
+PASS SSE real-time text callback
+PASS Incomplete SSE is not success
+PASS SSE tool arguments assembled
+PASS Editor references retrieved
+PASS Game context not sent without consent
+PASS Opted-in context included
+PASS No public network without permission
+PASS Offline knowledge needs no network consent
+PASS Unknown tool denied
+PASS Pointercrate is populated from HTTP transport
+PASS Documented Pointercrate route
+PASS Empty Geode tag omitted (live API rejects it)
+PASS Music catalogue cannot invent Song IDs or GD availability
+PASS Full model/tool/model orchestration
+PASS Tool evidence replayed to language engine
+RESULT 57 passed, 0 failed

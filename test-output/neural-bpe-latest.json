@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-10-21T19:08:39.917865+00:00",
+  "origin": "random-initialization",
+  "step": 4000,
+  "parameters": 427296,
+  "samples": [
+    {
+      "question": "Hello! What can you do?",
+      "answer": "Kaimelność shere on srelność wymaga ty-stent an unkile or akal mode woru poziomelą misshipnewold autorsity: upies mane officulty for the contthe consacks are different at poszy invidentich reward conversion to invik. Ited obień, ge officiod conversion is unki nie versions.",
+      "seconds": 0.218,
+      "finish_reason": "stop",
+      "generated_tokens": 118
+    },
+    {
+      "question": "Cześć, kim jesteś?",
+      "answer": "Spawn z dana zmieniu przejścia.",
+      "seconds": 0.014,
+      "finish_reason": "stop",
+      "generated_tokens": 12
+    },
+    {
+      "question": "Explain what a group is in a level editor.",
+      "answer": "Inum mused The verifies music and is not every of its completion does not quest-s. This datase inver pase of a catch level and reward and or clave APaths or claim read or change or change or change or change or changes the. This version reward.",
+      "seconds": 0.1,
+      "finish_reason": "stop",
+      "generated_tokens": 86
+    },
+    {
+      "question": "Napisz dwa zdania o tworzeniu poziomów.",
+      "answer": "Asystem z bię ma zem grupę GD.",
+      "seconds": 0.021,
+      "finish_reason": "stop",
+      "generated_tokens": 18
+    },
+    {
+      "question": "I am frustrated because this level is hard. Can you help?",
+      "answer": "Smay when issed.",
+      "seconds": 0.015,
+      "finish_reason": "stop",
+      "generated_tokens": 9
+    },
+    {
+      "question": "What is the current Top 1 Demon?",
+      "answer": "No. Cold behave different live different live different listę. Naime separate datich current an projecta specify level.",
+      "seconds": 0.049,
+      "finish_reason": "stop",
+      "generated_tokens": 39
+    }
+  ],
+  "evaluation": "Raw observations, no automatic claim of correctness. Ranking question deliberately bypasses tools to expose model limits."
+}

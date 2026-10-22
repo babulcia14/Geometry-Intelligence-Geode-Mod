@@ -1,0 +1,161 @@
+{
+  "geode": "5.11.2",
+  "gd": {
+    "win": "2.2081"
+  },
+  "id": "babulcia.geometry-intelligence",
+  "name": "Geometry Intelligence: Rub",
+  "version": "v1.0.0-alpha.2",
+  "developer": "AER",
+  "description": "Local AI assistant with a from-scratch experimental model and sourced Geometry Dash tools.",
+  "tags": [
+    "utility",
+    "interface",
+    "online"
+  ],
+  "resources": {
+    "files": [
+      "resources/knowledge.json",
+      "resources/gi-font.fnt",
+      "resources/gi-font.png",
+      "resources/OFL.txt",
+      "resources/rub-logo.png"
+    ]
+  },
+  "settings": {
+    "general-title": {
+      "type": "title",
+      "name": "General / Ogólne"
+    },
+    "language": {
+      "type": "string",
+      "name": "Language / Język",
+      "default": "pl",
+      "one-of": [
+        "pl",
+        "en"
+      ]
+    },
+    "theme": {
+      "type": "string",
+      "name": "Theme / Motyw",
+      "default": "graphite",
+      "one-of": [
+        "graphite",
+        "midnight"
+      ]
+    },
+    "history": {
+      "type": "bool",
+      "name": "Save Chat History / Zapisuj historię",
+      "default": false,
+      "description": "Encrypted local history. Off deletes the saved history on the next chat operation; in-memory context remains until exit or Clear Data."
+    },
+    "notifications": {
+      "type": "bool",
+      "name": "Notifications / Powiadomienia",
+      "default": true
+    },
+    "ai-title": {
+      "type": "title",
+      "name": "AI / Model"
+    },
+    "endpoint": {
+      "type": "string",
+      "name": "AI Engine URL / Adres silnika",
+      "default": "http://127.0.0.1:18765/v1",
+      "description": "Our from-scratch Python server: http://127.0.0.1:18765/v1. Optional Ollama: http://127.0.0.1:11434/v1. Chat Completions tool API required."
+    },
+    "model": {
+      "type": "string",
+      "name": "Model Selection / Nazwa modelu",
+      "default": "gi-tiny",
+      "description": "gi-tiny is our own experimental model. Use Connection in the chat to list installed models. No paid API required."
+    },
+    "streaming": {
+      "type": "bool",
+      "name": "Streaming / Odpowiedzi na żywo",
+      "default": true,
+      "description": "True SSE from the model. Turn off if your optional provider does not support SSE."
+    },
+    "response-tokens": {
+      "type": "int",
+      "name": "Response Length / Limit tokenów",
+      "default": 600,
+      "min": 128,
+      "max": 4096
+    },
+    "timeout": {
+      "type": "int",
+      "name": "Timeout / Limit sekund",
+      "default": 90,
+      "min": 5,
+      "max": 300
+    },
+    "search-title": {
+      "type": "title",
+      "name": "Search / Wyszukiwanie"
+    },
+    "pointercrate": {
+      "type": "bool",
+      "name": "Pointercrate Integration",
+      "default": true
+    },
+    "geode-index": {
+      "type": "bool",
+      "name": "Geode Integration",
+      "default": true
+    },
+    "level-search": {
+      "type": "bool",
+      "name": "Level Information / Dane poziomów",
+      "default": true
+    },
+    "music-search": {
+      "type": "bool",
+      "name": "Music Search / Muzyka",
+      "default": true,
+      "description": "Free MusicBrainz metadata search; it is not a GD whitelist. Known Newgrounds Song IDs can be checked against GD. An optional Brave key enables Newgrounds discovery."
+    },
+    "web-search": {
+      "type": "bool",
+      "name": "Internet Search / Wyszukiwanie WWW",
+      "default": true,
+      "description": "Without a key: Wikipedia for web queries and MusicBrainz for music. Optional Brave key enables broader search. Public API consent is required."
+    },
+    "cache": {
+      "type": "bool",
+      "name": "Public API Cache / Pamięć API",
+      "default": true
+    },
+    "cache-seconds": {
+      "type": "int",
+      "name": "Cache lifetime / Czas cache",
+      "default": 120,
+      "min": 0,
+      "max": 3600
+    },
+    "privacy-title": {
+      "type": "title",
+      "name": "Privacy / Prywatność"
+    },
+    "public-consent": {
+      "type": "bool",
+      "name": "Allow Public APIs / Zezwól na publiczne API",
+      "default": false,
+      "description": "Sends query terms or IDs to Pointercrate, Geode, GD servers, MusicBrainz, Wikipedia and any configured search provider. It does not send whole chats to these tools."
+    },
+    "remote-consent": {
+      "type": "bool",
+      "name": "Allow Remote AI / Zezwól na zewnętrzne AI",
+      "default": false,
+      "description": "External models receive recent conversation, retrieved facts and any enabled game context. Requires HTTPS. Leave off for our local model. A localhost relay must also remain local."
+    },
+    "game-context": {
+      "type": "bool",
+      "name": "Share Game Context / Udostępnij dane ekranu",
+      "default": false,
+      "description": "Copies level name, creator, ID, song ID, stars and screen type. No account data, level strings, objects, saves or inputs. Never edits levels."
+    }
+  }
+}

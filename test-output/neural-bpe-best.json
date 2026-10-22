@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-10-21T19:08:39.901489+00:00",
+  "origin": "random-initialization",
+  "step": 300,
+  "parameters": 427296,
+  "samples": [
+    {
+      "question": "Hello! What can you do?",
+      "answer": "Keconal rever po not plemoning t triggery and unnele requickilnalogetputs the itation, horplace clave sitel insitionameves collect is not the the the fevethelsilely changes revated group. Ree levels can bast demonformation ine of the level vainch the nisibledut the the version.",
+      "seconds": 0.218,
+      "finish_reason": "stop",
+      "generated_tokens": 118
+    },
+    {
+      "question": "Cześć, kim jesteś?",
+      "answer": "Knnana zwa postępu zweri i wa wywicz aktualne kaz przewersji przyaktywów. Sama zwerwicz ść przeczy sze.",
+      "seconds": 0.057,
+      "finish_reason": "stop",
+      "generated_tokens": 53
+    },
+    {
+      "question": "Explain what a group is in a level editor.",
+      "answer": "Knpanthat use the ignemones exact the that reve changes and sition.",
+      "seconds": 0.031,
+      "finish_reason": "stop",
+      "generated_tokens": 30
+    },
+    {
+      "question": "Napisz dwa zdania o tworzeniu poziomów.",
+      "answer": "Swicanie. Bruchama poczenie mu wa posary Prkolic.",
+      "seconds": 0.035,
+      "finish_reason": "stop",
+      "generated_tokens": 29
+    },
+    {
+      "question": "I am frustrated because this level is hard. Can you help?",
+      "answer": "Kning ves the action.",
+      "seconds": 0.012,
+      "finish_reason": "stop",
+      "generated_tokens": 9
+    },
+    {
+      "question": "What is the current Top 1 Demon?",
+      "answer": "Kn. Brever pal rple and the exame 10 mover base rever b or puts the in-= 0.",
+      "seconds": 0.047,
+      "finish_reason": "stop",
+      "generated_tokens": 40
+    }
+  ],
+  "evaluation": "Raw observations, no automatic claim of correctness. Ranking question deliberately bypasses tools to expose model limits."
+}

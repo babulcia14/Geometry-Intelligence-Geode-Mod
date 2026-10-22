@@ -1,0 +1,550 @@
+[
+  {
+    "title": "Groups and trigger activation / Grupy",
+    "url": "https://www.robtopgames.com/files/GDEditor.pdf",
+    "checked": "2026-10-21",
+    "keywords": [
+      "group",
+      "grup",
+      "activation",
+      "aktywac",
+      "multi trigger"
+    ],
+    "facts": [
+      "An object's Group ID selects it for trigger operations. A trigger's own group, assigned with Edit Group, is distinct from its Target Group ID.",
+      "Spawn Triggered allows a Spawn trigger to activate a trigger by its own group. Multi Trigger permits repeated activation. Touch Triggered changes activation to touching the trigger.",
+      "Use unused groups in a copy of your level. These notes explain settings; the assistant does not edit objects."
+    ],
+    "facts_pl": [
+      "Group ID przypisuje obiekt do grupy sterowanej triggerami. Grupa samego triggera, ustawiana w Edit Group, to co innego niż jego Target Group ID.",
+      "Spawn Triggered pozwala uruchamiać trigger przez Spawn wskazujący jego własną grupę. Multi Trigger umożliwia wielokrotne uruchamianie. Touch Triggered zmienia aktywację na dotknięcie triggera.",
+      "Używaj wolnych grup w kopii swojego poziomu. Asystent objaśnia ustawienia i nie zmienia obiektów."
+    ],
+    "scope": "GD 2.2 reference; not an in-game test. Missing details must be checked, not guessed."
+  },
+  {
+    "title": "Move Trigger",
+    "url": "https://www.robtopgames.com/files/GDEditor.pdf",
+    "checked": "2026-10-21",
+    "keywords": [
+      "move",
+      "przesu",
+      "porusz",
+      "ruch"
+    ],
+    "facts": [
+      "Assign the objects to an unused group, for example 1. Add a Move trigger and set Target Group ID to 1.",
+      "In normal Move mode, Move X = 10 moves one block right; -10 moves one block left. Move Y = 10 moves one block up. Do not confuse these fields with other editor fields that use 30 units per block.",
+      "Set Move Time, for example 1 second. Easing changes acceleration. Start with no easing and playtest the displacement.",
+      "Target Mode and Small Step change how movement values are interpreted; these example values apply to normal mode with Small Step off. See PDF pages 68-70."
+    ],
+    "facts_pl": [
+      "Przypisz obiekty do wolnej grupy, np. 1. Dodaj Move Trigger i ustaw Target Group ID na 1.",
+      "W zwykłym trybie Move wartość Move X = 10 przesuwa o jeden blok w prawo, -10 w lewo. Move Y = 10 przesuwa o blok w górę. Inne pola edytora mogą używać 30 jednostek na blok; nie mieszaj tych skal.",
+      "Ustaw Move Time, np. 1 sekundę. Easing zmienia przyspieszanie. Zacznij bez easing i sprawdź ruch podczas testu.",
+      "Target Mode i Small Step zmieniają interpretację wartości. Ten przykład dotyczy zwykłego trybu z wyłączonym Small Step. Zobacz strony PDF 68-70."
+    ],
+    "scope": "GD 2.2 reference; not an in-game test. Missing details must be checked, not guessed."
+  },
+  {
+    "title": "Rotate forever: example setup / Ciągły obrót",
+    "url": "https://www.robtopgames.com/files/GDEditor.pdf",
+    "checked": "2026-10-21",
+    "keywords": [
+      "rotate",
+      "rotation",
+      "obrot",
+      "obrót",
+      "obrac",
+      "forever",
+      "ciągle",
+      "ciagle",
+      "spin"
+    ],
+    "facts": [
+      "Example recipe based on the manual, not yet tested in this project in-game. Use a copy of your level and unused IDs. Here 1 is the artwork, 2 the pivot, and 3 the loop-control group.",
+      "Select the rotating objects and assign Group 1 in Edit Group. Put a separate object at the rotation centre and assign only that object to Group 2. Center Group ID must identify one object.",
+      "Add Rotate. Set Target Group ID = 1, Center Group ID = 2, Move Time = 2, Degrees = 0, x360 = 1, and no easing. Do not enable Lock Obj Rotation if the artwork should rotate with the motion.",
+      "In Edit Group assign this Rotate trigger itself to Group 3. Enable Spawn Triggered and Multi Trigger on it.",
+      "Add a repeating Spawn trigger: Group ID = 3 and Delay = 2. Assign the Spawn trigger itself to Group 3 in Edit Group. Enable Spawn Triggered and Multi Trigger on it too.",
+      "Add a separate starter Spawn with Group ID = 3 and Delay = 0. Leave this starter normally activated by crossing it; do not place it in the repeating control group. It starts the Rotate and the two-second timer together.",
+      "Each timer completion starts the next full turn. Positive x360 turns clockwise; negative turns anticlockwise. Keep the repeat delay positive and match it to Move Time to avoid instant recursion or overlapping turns.",
+      "End the section with a Stop trigger targeting control Group 3 to stop these actions. Playtest start, repeated turns, stop, restart and speed changes. Rotate settings: PDF pages 75-77; Spawn: 72-74."
+    ],
+    "facts_pl": [
+      "Przykład złożony na podstawie podręcznika; w tym projekcie jeszcze nietestowany w grze. Pracuj na kopii poziomu i wolnych ID. Tu 1 oznacza dekorację, 2 środek obrotu, a 3 grupę sterującą pętlą.",
+      "Zaznacz obracane obiekty i w Edit Group przypisz Group 1. Umieść osobny obiekt w środku obrotu i tylko jemu przypisz Group 2. Center Group ID musi wskazywać pojedynczy obiekt.",
+      "Dodaj Rotate. Ustaw Target Group ID = 1, Center Group ID = 2, Move Time = 2, Degrees = 0, x360 = 1 i brak easing. Nie włączaj Lock Obj Rotation, jeśli dekoracja ma obracać się razem z ruchem.",
+      "Samemu triggerowi Rotate przypisz Group 3 w Edit Group. Włącz na nim Spawn Triggered oraz Multi Trigger.",
+      "Dodaj powtarzający Spawn: Group ID = 3, Delay = 2. Samemu triggerowi Spawn też przypisz Group 3 w Edit Group i włącz Spawn Triggered oraz Multi Trigger.",
+      "Dodaj osobny początkowy Spawn z Group ID = 3 i Delay = 0. Nie dodawaj go do grupy pętli; pozostaw zwykłe uruchamianie po przekroczeniu triggera. Uruchomi obrót i dwusekundowy timer jednocześnie.",
+      "Po dwóch sekundach timer uruchamia następny obrót. Dodatnie x360 obraca zgodnie z zegarem, ujemne przeciwnie. Powtarzający timer musi mieć dodatnie Delay równe Move Time, aby uniknąć natychmiastowej rekursji lub nakładania obrotów.",
+      "Na końcu sekcji dodaj Stop wskazujący sterującą Group 3, aby zatrzymać te akcje. Przetestuj start, kilka obrotów, stop, ponowne uruchomienie i zmianę prędkości. Rotate: strony PDF 75-77; Spawn: 72-74."
+    ],
+    "scope": "GD 2.2 reference; not an in-game test. Missing details must be checked, not guessed."
+  },
+  {
+    "title": "Spawn Trigger and loops / Pętle",
+    "url": "https://www.robtopgames.com/files/GDEditor.pdf",
+    "checked": "2026-10-21",
+    "keywords": [
+      "spawn",
+      "loop",
+      "pęt",
+      "petl",
+      "repeat",
+      "powtarz",
+      "zapęt",
+      "zapet"
+    ],
+    "facts": [
+      "Spawn's Group ID identifies the group of spawn-triggered triggers to activate; Delay is the waiting time.",
+      "To repeat an action, assign the action trigger and a delayed Spawn to one control group. The delayed Spawn targets that control group. Both need Spawn Triggered and Multi Trigger.",
+      "Use a separate starter and a defined stopping condition. Never use zero delay for a self-repeating chain. Preview Disabled only affects preview behavior, not the need to verify the actual level."
+    ],
+    "facts_pl": [
+      "Group ID w Spawn wskazuje grupę triggerów z włączonym Spawn Triggered. Delay określa opóźnienie ich uruchomienia.",
+      "Aby powtarzać akcję, przypisz jej trigger i opóźniony Spawn do jednej grupy sterującej. Spawn wskazuje tę samą grupę. Oba potrzebują Spawn Triggered i Multi Trigger.",
+      "Dodaj osobny start i warunek zatrzymania. Nie stosuj zerowego Delay w samopowtarzającej się pętli. Preview Disabled dotyczy podglądu; nadal trzeba przetestować poziom."
+    ],
+    "scope": "GD 2.2 reference; not an in-game test. Missing details must be checked, not guessed."
+  },
+  {
+    "title": "Alpha and Pulse",
+    "url": "https://www.robtopgames.com/files/GDEditor.pdf",
+    "checked": "2026-10-21",
+    "keywords": [
+      "alpha",
+      "pulse",
+      "opacity",
+      "przezro",
+      "puls",
+      "kolor"
+    ],
+    "facts": [
+      "Alpha changes opacity for a target group over a duration: 0 is invisible, 1 is fully visible. It does not automatically disable a solid object's collision.",
+      "Pulse temporarily changes a colour channel or group colour using fade-in, hold and fade-out. Select the targeting mode before entering the ID.",
+      "Use separate groups for decoration and gameplay when their visibility should behave differently."
+    ],
+    "facts_pl": [
+      "Alpha zmienia przezroczystość grupy w zadanym czasie: 0 oznacza niewidoczność, 1 pełną widoczność. Nie wyłącza automatycznie kolizji bryły.",
+      "Pulse chwilowo zmienia kolor kanału lub grupy, używając faz narastania, podtrzymania i zanikania. Wybierz tryb celu przed wpisaniem ID.",
+      "Rozdziel grupy dekoracji i elementów rozgrywki, jeśli ich widoczność ma działać inaczej."
+    ],
+    "scope": "GD 2.2 reference; not an in-game test. Missing details must be checked, not guessed."
+  },
+  {
+    "title": "Camera and Static Camera / Kamera",
+    "url": "https://www.robtopgames.com/files/GDEditor.pdf",
+    "checked": "2026-10-21",
+    "keywords": [
+      "camera",
+      "kamer",
+      "static",
+      "zoom",
+      "offset"
+    ],
+    "facts": [
+      "Camera Zoom, Offset and Rotate change the view. Use duration and easing to control transitions and test different aspect ratios.",
+      "Static Camera uses Target Group ID containing one object. Follow decides whether the camera tracks that target's later motion. Duration controls the transition.",
+      "Use another Static Camera with Exit Static enabled to return to normal following. Exit Instant removes the return transition. See PDF pages 119-120.",
+      "Camera effects must leave upcoming obstacles readable. A verbal description cannot establish fair visibility on every device."
+    ],
+    "facts_pl": [
+      "Camera Zoom, Offset i Rotate zmieniają widok. Czas i easing sterują przejściem; testuj różne proporcje ekranu.",
+      "Static Camera używa Target Group ID z jednym obiektem. Follow decyduje o śledzeniu późniejszego ruchu celu, a Duration o czasie przejścia.",
+      "Aby wrócić do zwykłego śledzenia gracza, użyj kolejnego Static Camera z Exit Static. Exit Instant usuwa przejście powrotne. Zobacz strony PDF 119-120.",
+      "Efekt kamery powinien pozostawiać przeszkody czytelne. Sam opis nie dowodzi dobrej widoczności na każdym urządzeniu."
+    ],
+    "scope": "GD 2.2 reference; not an in-game test. Missing details must be checked, not guessed."
+  },
+  {
+    "title": "Keyframes / Klatki animacji",
+    "url": "https://www.robtopgames.com/files/GDEditor.pdf",
+    "checked": "2026-10-21",
+    "keywords": [
+      "keyframe",
+      "klatk",
+      "animac",
+      "animation"
+    ],
+    "facts": [
+      "Keyframes describe successive transformation states; Keyframe Animation plays the configured animation for an object group.",
+      "Check the animation ID, target group, order, timing and interpolation together. An animation control ID is not the object's Group ID.",
+      "Build a minimal two-state animation first. If a specific dialog option is not documented in these notes, request its exact label rather than inventing it."
+    ],
+    "facts_pl": [
+      "Keyframes opisują kolejne stany transformacji; Keyframe Animation odtwarza przygotowaną animację grupy obiektów.",
+      "Sprawdź razem ID animacji, grupę celu, kolejność, czas i interpolację. ID sterujące animacją nie jest Group ID obiektu.",
+      "Zacznij od minimalnej animacji z dwoma stanami. Jeśli notatki nie opisują konkretnej opcji okna, potrzebna jest jej dokładna nazwa zamiast zgadywania."
+    ],
+    "scope": "GD 2.2 reference; not an in-game test. Missing details must be checked, not guessed."
+  },
+  {
+    "title": "Collision and Object IDs",
+    "url": "https://www.robtopgames.com/files/GDEditor.pdf",
+    "checked": "2026-10-21",
+    "keywords": [
+      "collision",
+      "koliz",
+      "block id",
+      "object id",
+      "id obiekt"
+    ],
+    "facts": [
+      "Collision blocks use Block IDs. Collision triggers observe a chosen pair and activate a group when the configured condition is satisfied.",
+      "Block IDs, Group IDs and Object IDs have different purposes. An Object ID identifies an object type; it is not a unique instance or a target group.",
+      "Check dynamic-block settings, collision enter/exit conditions and repeated activation in a minimal test. This reference does not contain an exhaustive numeric object-ID catalogue."
+    ],
+    "facts_pl": [
+      "Bloki Collision używają Block ID. Collision Trigger obserwuje wybraną parę i aktywuje grupę po spełnieniu ustawionego warunku.",
+      "Block ID, Group ID i Object ID mają różne znaczenia. Object ID oznacza rodzaj obiektu, a nie jego unikatowy egzemplarz lub grupę celu.",
+      "Sprawdź ustawienia dynamicznych bloków, początek/koniec kolizji i ponowne aktywowanie w małym teście. Ta baza nie zawiera kompletnego katalogu numerycznych Object ID."
+    ],
+    "scope": "GD 2.2 reference; not an in-game test. Missing details must be checked, not guessed."
+  },
+  {
+    "title": "Shaders, decoration and optimisation",
+    "url": "https://www.robtopgames.com/files/GDEditor.pdf",
+    "checked": "2026-10-21",
+    "keywords": [
+      "shader",
+      "effect",
+      "efekt",
+      "optymal",
+      "optim",
+      "lag",
+      "decor",
+      "dekor",
+      "wydajn"
+    ],
+    "facts": [
+      "Shader effects process the view. Limit their strength and duration, define a reset and check obstacle readability.",
+      "Overlapping transparent layers, particles and continuously running trigger loops can increase work. Measure actual gameplay; object count alone does not predict FPS.",
+      "Offer low-detail decoration while preserving gameplay cues. Reuse groups deliberately, disable finished effects and test transitions at the intended speed."
+    ],
+    "facts_pl": [
+      "Shadery przetwarzają obraz. Ogranicz siłę i czas efektu, dodaj jego reset i sprawdź czytelność przeszkód.",
+      "Nakładające się przezroczyste warstwy, cząsteczki i stale działające pętle mogą zwiększać obciążenie. Mierz rzeczywistą rozgrywkę; sama liczba obiektów nie wyznacza FPS.",
+      "Przygotuj mniej szczegółową dekorację, zachowując wskazówki rozgrywki. Świadomie współdziel grupy, wyłączaj zakończone efekty i testuj przejścia z docelową prędkością."
+    ],
+    "scope": "GD 2.2 reference; not an in-game test. Missing details must be checked, not guessed."
+  },
+  {
+    "title": "Game modes / Tryby gry",
+    "url": "https://www.robtopgames.com/files/GDEditor.pdf",
+    "checked": "2026-10-21",
+    "keywords": [
+      "game mode",
+      "tryb",
+      "cube",
+      "ship",
+      "ball",
+      "ufo",
+      "wave",
+      "robot",
+      "spider",
+      "swing",
+      "jetpack"
+    ],
+    "facts": [
+      "Classic modes include Cube (ground jumps), Ship (thrust while held), Ball (gravity switches on contact), UFO (individual flaps), Wave (diagonal movement controlled by holding), Robot (variable jump height), Spider (instant surface-changing gravity flip) and Swing (gravity toggles while flying).",
+      "Classic gameplay normally advances automatically. Platformer allows horizontal control and uses checkpoints; ship-style platformer flight uses Jetpack behavior. Availability and physics depend on mode and portals.",
+      "Speed, size, gravity and dual portals change movement conditions. Practice transitions instead of assuming that identical clicks work across different speeds or sizes."
+    ],
+    "facts_pl": [
+      "Klasyczne tryby to Cube (skoki z podłoża), Ship (ciąg przy przytrzymaniu), Ball (zmiana grawitacji przy kontakcie), UFO (pojedyncze podbicia), Wave (ruch po skosie sterowany przytrzymaniem), Robot (regulowana wysokość skoku), Spider (natychmiastowa zmiana powierzchni przy odwróceniu grawitacji) i Swing (zmiana grawitacji w locie).",
+      "Classic zwykle przesuwa gracza automatycznie. Platformer pozwala sterować poziomo i korzystać z checkpointów; latanie typu Ship działa w nim jako Jetpack. Dostępność i fizyka zależą od trybu i portali.",
+      "Portale prędkości, rozmiaru, grawitacji i dual zmieniają ruch. Ćwicz przejścia; te same kliknięcia nie muszą działać przy innej prędkości lub rozmiarze."
+    ],
+    "scope": "GD 2.2 reference; not an in-game test. Missing details must be checked, not guessed."
+  },
+  {
+    "title": "Difficulty and Demon difficulty",
+    "url": "https://www.robtopgames.com/faq/en/answers/level/",
+    "checked": "2026-10-21",
+    "keywords": [
+      "difficulty",
+      "difficulties",
+      "trudno",
+      "easy demon",
+      "medium demon",
+      "hard demon",
+      "insane demon",
+      "extreme demon"
+    ],
+    "facts": [
+      "Level difficulty labels include Auto, Easy, Normal, Hard, Harder, Insane and Demon. Unrated or not-yet-classified levels can show N/A.",
+      "Demon subcategories are Easy Demon, Medium Demon, Hard Demon, Insane Demon and Extreme Demon. These are broad difficulty categories, not numbered Pointercrate positions.",
+      "Star/moon ratings and Featured/Epic/Legendary/Mythic distinctions describe different things. RobTop selects rated levels; moderator sends do not guarantee a rating. Use live metadata to check a particular level."
+    ],
+    "facts_pl": [
+      "Oznaczenia trudności to Auto, Easy, Normal, Hard, Harder, Insane i Demon. Poziomy bez ustalonej trudności mogą pokazywać N/A.",
+      "Podkategorie Demon to Easy Demon, Medium Demon, Hard Demon, Insane Demon i Extreme Demon. Są to szerokie kategorie trudności, a nie pozycje w rankingu Pointercrate.",
+      "Ocena gwiazdkami/księżycami i wyróżnienia Featured/Epic/Legendary/Mythic opisują różne rzeczy. RobTop wybiera oceniane poziomy; wysłanie przez moderatora nie gwarantuje oceny. Konkretny level wymaga aktualnych danych."
+    ],
+    "scope": "GD 2.2 reference; not an in-game test. Missing details must be checked, not guessed."
+  },
+  {
+    "title": "Geometry Dash 2.2: historical release",
+    "url": "https://steamcommunity.com/games/322170/announcements/detail/3884982211363257388",
+    "checked": "2026-10-21",
+    "keywords": [
+      "2.2",
+      "update",
+      "aktualiz",
+      "history",
+      "histori"
+    ],
+    "facts": [
+      "The official 2.2 Steam announcement is dated 20 December 2023 UTC. It introduced Dash, Swing, Platformer with four official levels, Moons, the Music and SFX libraries, camera controls, shaders and keyframe tools.",
+      "This is historical release information. It is not a claim that 2.2 or a particular patch is the newest version today. Check current official announcements for the latest release."
+    ],
+    "facts_pl": [
+      "Oficjalna zapowiedź wydania 2.2 na Steam ma datę 20 grudnia 2023 UTC. Dodano Dash, Swing, Platformer z czterema oficjalnymi poziomami, Moons, biblioteki Music i SFX, sterowanie kamerą, shadery i keyframes.",
+      "To historia wydania, a nie zapewnienie, że 2.2 lub dana poprawka jest dzisiaj najnowsza. Najnowszą wersję sprawdź w aktualnych komunikatach autora."
+    ],
+    "scope": "GD 2.2 reference; not an in-game test. Missing details must be checked, not guessed."
+  },
+  {
+    "title": "Official full-game levels: 2.2 baseline",
+    "url": "https://store.steampowered.com/app/322170/Geometry_Dash/",
+    "checked": "2026-10-21",
+    "keywords": [
+      "official level",
+      "oficjaln",
+      "stereo madness",
+      "back on track",
+      "deadlocked",
+      "fingerdash",
+      "the tower"
+    ],
+    "facts": [
+      "The classic full-game sequence in the 2.2 baseline contains 22 levels: Stereo Madness, Back On Track, Polargeist, Dry Out, Base After Base, Can't Let Go, Jumper, Time Machine, Cycles, xStep, Clutterfunk, Theory of Everything, Electroman Adventures, Clubstep, Electrodynamix, Hexagon Force, Blast Processing, Theory of Everything 2, Geometrical Dominator, Deadlocked, Fingerdash, Dash.",
+      "The four 2.2 Tower platformer levels are The Tower, The Sewers, The Cellar and The Secret Hollow. Spin-offs have separate level sets and are outside this list.",
+      "This is a historical baseline, not a live catalogue of future updates. The project's observed installed resources contain classic files 1-22 and tower files 5001-5004. A song entry for Explorers alone does not prove a playable level was released."
+    ],
+    "facts_pl": [
+      "Kolejność 22 klasycznych poziomów pełnej gry w bazowym wydaniu 2.2: Stereo Madness, Back On Track, Polargeist, Dry Out, Base After Base, Can't Let Go, Jumper, Time Machine, Cycles, xStep, Clutterfunk, Theory of Everything, Electroman Adventures, Clubstep, Electrodynamix, Hexagon Force, Blast Processing, Theory of Everything 2, Geometrical Dominator, Deadlocked, Fingerdash, Dash.",
+      "Cztery platformerowe poziomy Tower z 2.2 to The Tower, The Sewers, The Cellar i The Secret Hollow. Osobne gry poboczne mają własne zestawy i nie są ujęte na tej liście.",
+      "To historyczny punkt odniesienia, nie katalog przyszłych aktualizacji. W odczytanym katalogu zasobów zainstalowanej gry były pliki 1-22 i 5001-5004. Sam wpis piosenki Explorers nie dowodzi wydania grywalnego poziomu."
+    ],
+    "scope": "Historical full-game 2.2 reference; names authored from known game UI, file counts checked locally. Store page describes the game, not an exhaustive level table."
+  },
+  {
+    "title": "Practice and learning / Nauka gry",
+    "url": "https://store.steampowered.com/app/322170/Geometry_Dash/",
+    "checked": "2026-10-21",
+    "keywords": [
+      "practice",
+      "practice mode",
+      "ćwicz",
+      "cwicz",
+      "trening",
+      "learn"
+    ],
+    "facts": [
+      "Practice Mode places checkpoints so difficult sections can be rehearsed. A practice completion is not the same as a normal completion.",
+      "Break a level into transitions, practise consistent inputs, then connect sections. Adjusting practice checkpoints can expose an awkward entry state.",
+      "This assistant gives advice only; it never inputs clicks, completes levels, changes rewards or submits records."
+    ],
+    "facts_pl": [
+      "Practice Mode używa checkpointów do ćwiczenia trudnych sekcji. Ukończenie w practice nie jest ukończeniem normalnym.",
+      "Podziel level na przejścia, ćwicz powtarzalne wejścia i łącz sekcje. Zmiana checkpointa pomaga wykryć niewygodny stan początkowy.",
+      "Asystent tylko doradza: nie klika, nie przechodzi poziomów, nie zmienia nagród i nie wysyła rekordów."
+    ],
+    "scope": "GD 2.2 reference; not an in-game test. Missing details must be checked, not guessed."
+  },
+  {
+    "title": "Icons and achievements / Ikony i osiągnięcia",
+    "url": "https://store.steampowered.com/app/322170/Geometry_Dash/",
+    "checked": "2026-10-21",
+    "keywords": [
+      "icon",
+      "ikon",
+      "achievement",
+      "osiąg",
+      "osiag",
+      "unlock",
+      "odblok"
+    ],
+    "facts": [
+      "Icons and colours are cosmetic unlocks. Requirements vary: achievements, shops, chests, secrets and other progress systems can unlock different items.",
+      "Select the locked item in the game to inspect its requirement. Give the exact icon type/number or requirement text for specific help. This database does not contain a verified complete unlock table.",
+      "Achievements and available unlocks can change with updates and platform. Do not infer ownership or completed achievements from a conversation; the mod does not read private account progress."
+    ],
+    "facts_pl": [
+      "Ikony i kolory są nagrodami kosmetycznymi. Warunki różnią się: osiągnięcia, sklepy, skrzynie, sekrety i inne systemy postępu odblokowują różne przedmioty.",
+      "Wybierz zablokowany element w grze, aby zobaczyć wymaganie. Do dokładnej pomocy potrzebny jest typ/numer ikony albo tekst warunku. Ta baza nie ma zweryfikowanej kompletnej tabeli odblokowań.",
+      "Osiągnięcia i nagrody mogą zmieniać się wraz z aktualizacją i platformą. Mod nie odczytuje prywatnego postępu konta i nie zakłada, że masz daną nagrodę."
+    ],
+    "scope": "GD 2.2 reference; not an in-game test. Missing details must be checked, not guessed."
+  },
+  {
+    "title": "Secret Coins and User Coins / Monety",
+    "url": "https://store.steampowered.com/app/322170/Geometry_Dash/",
+    "checked": "2026-10-21",
+    "keywords": [
+      "secret coin",
+      "user coin",
+      "coins",
+      "monet"
+    ],
+    "facts": [
+      "Secret Coins and User Coins are separate collectibles. Official levels and certain game challenges use Secret Coins; creator levels can contain User Coins.",
+      "A placed user coin is not automatically a verified silver coin. Check the level's coin state in the game and meet its completion conditions; seeing an object is not evidence of a granted reward.",
+      "This reference does not track your collected coins or provide a complete location guide. Ask about a specific level and coin."
+    ],
+    "facts_pl": [
+      "Secret Coins i User Coins to osobne rodzaje monet. Oficjalne poziomy i wybrane wyzwania używają Secret Coins; poziomy twórców mogą zawierać User Coins.",
+      "Wstawiona moneta użytkownika nie staje się automatycznie zweryfikowaną srebrną monetą. Sprawdź stan monet levela i warunki ukończenia; widoczny obiekt nie dowodzi przyznania nagrody.",
+      "Ta baza nie śledzi zebranych monet i nie zawiera kompletnej mapy ich położenia. Potrzebny jest konkretny level i moneta."
+    ],
+    "scope": "GD 2.2 reference; not an in-game test. Missing details must be checked, not guessed."
+  },
+  {
+    "title": "Map Packs and Gauntlets",
+    "url": "https://steamcommunity.com/games/322170/announcements/detail/3884982211363257388",
+    "checked": "2026-10-21",
+    "keywords": [
+      "map pack",
+      "mappack",
+      "gauntlet",
+      "pakiet"
+    ],
+    "facts": [
+      "Map Packs and Gauntlets are curated collections of community levels with their own progression and completion rewards. They are distinct from the Demonlist ranking.",
+      "Their current contents, reward conditions and newly added collections should be checked in the corresponding in-game screen. This assistant does not fetch a complete live catalogue or claim rewards."
+    ],
+    "facts_pl": [
+      "Map Packs i Gauntlets to wybrane zestawy poziomów społeczności z własnym postępem i nagrodami za ukończenie. Nie są rankingiem Demonlist.",
+      "Aktualne levele, warunki nagród i nowe zestawy sprawdź w odpowiednim ekranie gry. Asystent nie pobiera kompletnego katalogu na żywo i nie odbiera nagród."
+    ],
+    "scope": "GD 2.2 reference; not an in-game test. Missing details must be checked, not guessed."
+  },
+  {
+    "title": "Paths / Ścieżki",
+    "url": "https://store.steampowered.com/app/322170/Geometry_Dash/",
+    "checked": "2026-10-21",
+    "keywords": [
+      "paths",
+      "path of",
+      "ścież",
+      "sciez"
+    ],
+    "facts": [
+      "Paths are a progression system with themed reward tracks. Choose a path in the game's Paths screen and inspect its activation cost, progress rules and milestones there.",
+      "This assistant has no verified table of every path reward and does not read or change your path progress. Exact costs or unlock requirements must not be guessed."
+    ],
+    "facts_pl": [
+      "Paths to system postępu z tematycznymi ścieżkami nagród. W ekranie Paths sprawdzisz koszt aktywacji, reguły postępu i kolejne progi.",
+      "Asystent nie ma zweryfikowanej tabeli wszystkich nagród i nie odczytuje ani nie zmienia twojego postępu. Nie należy zgadywać kosztów lub warunków odblokowania."
+    ],
+    "scope": "Introductory reference only; no verified reward table or live Paths adapter."
+  },
+  {
+    "title": "Daily, Weekly and Event levels",
+    "url": "https://store.steampowered.com/app/322170/Geometry_Dash/",
+    "checked": "2026-10-21",
+    "keywords": [
+      "daily",
+      "weekly",
+      "dzienn",
+      "tygodni",
+      "event level"
+    ],
+    "facts": [
+      "Daily, Weekly and Event screens select time-dependent community levels. A normal search result is not enough to establish that a level currently occupies one of those slots.",
+      "This version does not query those live slots. Open the relevant game screen for the active level and reward state. Never claim a reward was granted without observing the game's result."
+    ],
+    "facts_pl": [
+      "Ekrany Daily, Weekly i Event wybierają poziomy zależne od czasu. Zwykły wynik wyszukiwania nie dowodzi, że level aktualnie zajmuje takie miejsce.",
+      "Ta wersja nie pobiera tych slotów na żywo. Sprawdź aktywny poziom i nagrodę w odpowiednim ekranie gry. Nie można twierdzić, że nagroda została przyznana, bez wyniku z gry."
+    ],
+    "scope": "Scope limitation; no current Daily/Weekly/Event identifiers are stored here."
+  },
+  {
+    "title": "Community, creators, players and Demonlist",
+    "url": "https://pointercrate.com/documentation/",
+    "checked": "2026-10-21",
+    "keywords": [
+      "community",
+      "społecz",
+      "spolecz",
+      "publisher",
+      "verifier",
+      "twórc",
+      "tworc",
+      "pointercrate"
+    ],
+    "facts": [
+      "Level creators, publishers and verifiers can be different people. A collaboration may have many creators. Pointercrate's detail endpoint exposes creators separately from publisher and verifier.",
+      "Pointercrate ranks a specific community-maintained Demonlist. Its numeric position is different from GD's Demon difficulty category and is not a universal rating of every level.",
+      "Use live APIs for player profiles, current ranks and mod authors. This knowledge base does not invent biographies or treat popularity as objective evidence of skill."
+    ],
+    "facts_pl": [
+      "Twórca, publikujący i weryfikator mogą być różnymi osobami. Kolaboracja może mieć wielu twórców. Szczegóły Pointercrate mają osobną listę creators oraz publisher i verifier.",
+      "Pointercrate prowadzi konkretną społecznościową Demonlistę. Numer miejsca to co innego niż podkategoria Demon w grze i nie jest oceną wszystkich istniejących leveli.",
+      "Profile graczy, pozycje i autorów modów sprawdzaj przez aktualne API. Baza nie wymyśla biografii ani nie traktuje popularności jako obiektywnego dowodu umiejętności."
+    ],
+    "scope": "GD 2.2 reference; not an in-game test. Missing details must be checked, not guessed."
+  },
+  {
+    "title": "Geode installation, updates and errors",
+    "url": "https://github.com/geode-sdk/geode/releases/tag/v5.11.2",
+    "checked": "2026-10-21",
+    "keywords": [
+      "geode",
+      "install",
+      "instal",
+      "crash",
+      "błąd",
+      "blad",
+      "error",
+      "dependency",
+      "zależ",
+      "zalez",
+      "update geode"
+    ],
+    "facts": [
+      "Use the official Geode installer and built-in mod index. Check each mod's required GD version, Geode version and platform; restart when requested by the loader.",
+      "A missing-dependency error requires a compatible named dependency. Changing mod.json alone does not port compiled code to another GD version.",
+      "For a crash, collect the exact error and version list, then isolate conflicts one mod at a time after backing up saves. Do not upload complete logs automatically; they may contain private paths or account details.",
+      "Geode 5.11.2 release notes say its primary target is GD 2.2081 despite fixes for forward compatibility with 2.209. This project targets 2.2081 and does not claim tested 2.209 compatibility. This is a dated observation, not a permanent latest-version claim."
+    ],
+    "facts_pl": [
+      "Używaj oficjalnego instalatora Geode i wbudowanego indeksu modów. Sprawdzaj wymaganą wersję GD, Geode i platformę; restartuj, gdy loader tego wymaga.",
+      "Błąd brakującej zależności oznacza potrzebę zgodnej wersji wskazanego moda. Sama zmiana mod.json nie dostosowuje kodu binarnego do innej wersji GD.",
+      "Przy awarii zapisz dokładny komunikat i listę wersji, potem sprawdzaj konflikty po jednym modzie, po wykonaniu kopii zapisów. Nie wysyłaj automatycznie pełnych logów: mogą zawierać prywatne ścieżki lub dane konta.",
+      "Opis wydania Geode 5.11.2 nadal wskazuje GD 2.2081 jako główny cel mimo poprawek trybu zgodności dla 2.209. Ten projekt celuje w 2.2081 i nie deklaruje przetestowanej zgodności z 2.209. To obserwacja z podaną datą, nie stałe zapewnienie o najnowszej wersji."
+    ],
+    "scope": "GD 2.2 reference; not an in-game test. Missing details must be checked, not guessed."
+  },
+  {
+    "title": "Music, Newgrounds and availability",
+    "url": "https://www.newgrounds.com/wiki/frequently-asked-questions",
+    "checked": "2026-10-21",
+    "keywords": [
+      "music",
+      "muzyk",
+      "song",
+      "utwór",
+      "utwor",
+      "newgrounds",
+      "licen"
+    ],
+    "facts": [
+      "The integer in a Newgrounds /audio/listen/ URL identifies a song. A visible page alone does not prove GD availability; artist and game-side eligibility restrictions apply.",
+      "This version offers free MusicBrainz metadata discovery. That catalogue is not Newgrounds, a GD whitelist or a royalty-free library. It provides no GD Song ID, guaranteed mood or audio similarity.",
+      "Known Newgrounds IDs can be checked through GD song metadata when the server permits access. Errors or missing fields mean unverified, not permission to invent a result.",
+      "The official Music Library in GD is another place to choose music. Game availability and permission to reuse music elsewhere are different questions. Do not upload someone else's music to bypass restrictions."
+    ],
+    "facts_pl": [
+      "Liczba w adresie Newgrounds /audio/listen/ identyfikuje piosenkę. Sam dostęp do strony nie dowodzi dostępności w GD; obowiązują wymagania wobec autora i dopuszczenia do gry.",
+      "Ta wersja oferuje darmowe wyszukiwanie metadanych MusicBrainz. To nie Newgrounds, lista dopuszczeń GD ani biblioteka muzyki bez ograniczeń licencji. Nie daje Song ID GD, pewnego klimatu utworu ani podobieństwa na podstawie dźwięku.",
+      "Znane ID Newgrounds można sprawdzić przez metadane piosenek GD, jeśli serwer na to pozwoli. Błąd lub brak pola oznacza brak weryfikacji, a nie przyzwolenie na wymyślenie wyniku.",
+      "Oficjalna Music Library w GD jest kolejnym miejscem wyboru muzyki. Dostępność w grze i zgoda na użycie muzyki gdzie indziej to różne sprawy. Nie przesyłaj cudzej muzyki, aby ominąć ograniczenia."
+    ],
+    "scope": "GD 2.2 reference; not an in-game test. Missing details must be checked, not guessed."
+  }
+]

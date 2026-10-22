@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-10-21T13:26:23.355817+00:00",
+  "origin": "random-initialization",
+  "step": 300,
+  "parameters": 384288,
+  "samples": [
+    {
+      "question": "Hello! What can you do?",
+      "answer": "Nivemamer atit PTher s te an s achin mele is cit p ameior fe s aiory tin amomeme lathe monge fy s An wisit sthe tr.",
+      "seconds": 0.239,
+      "finish_reason": "stop",
+      "generated_tokens": 115
+    },
+    {
+      "question": "Cześć, kim jesteś?",
+      "answer": "Ka gra na stra zy gras tona uspa nini m domo pra poni iow koła j porze iemomomo  wdz wadngooź ma.",
+      "seconds": 0.165,
+      "finish_reason": "stop",
+      "generated_tokens": 99
+    },
+    {
+      "question": "Explain what a group is in a level editor.",
+      "answer": "Ke amameras me Pratifo tenes san Pry mule is are p ameior fe s alond tions titme lathe monge ilard.",
+      "seconds": 0.215,
+      "finish_reason": "stop",
+      "generated_tokens": 99
+    },
+    {
+      "question": "Napisz dwa zdania o tworzeniu poziomów.",
+      "answer": "K SDa my Rotry zy go s tone us a Ponioule icza Spruny iorok se ianionte ie gorok led s dongooź ranisje ie kodsteram sko.",
+      "seconds": 0.266,
+      "finish_reason": "stop",
+      "generated_tokens": 121
+    },
+    {
+      "question": "I am frustrated because this level is hard. Can you help?",
+      "answer": "Ke amame Rotithe the s te an san Prore le icthe me pe ise fe s aithe t and tit.",
+      "seconds": 0.14,
+      "finish_reason": "stop",
+      "generated_tokens": 79
+    },
+    {
+      "question": "What is the current Top 1 Demon?",
+      "answer": "Kevemamerall trateromo ten suspacnd trule ictrel pung ior fone arondute temomeme l the monge t tend ses it stomind.",
+      "seconds": 0.188,
+      "finish_reason": "stop",
+      "generated_tokens": 115
+    }
+  ],
+  "evaluation": "Raw observations, no automatic claim of correctness. Ranking question deliberately bypasses tools to expose model limits."
+}

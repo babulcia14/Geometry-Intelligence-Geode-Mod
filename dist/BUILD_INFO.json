@@ -1,0 +1,16 @@
+{
+  "mod_id": "babulcia.geometry-intelligence",
+  "version": "v1.0.0-alpha.2",
+  "geode_sdk": "5.11.2",
+  "gd_target": {
+    "win": "2.2081"
+  },
+  "architecture": "x64",
+  "mod_sha256": "f44c54a2687ea4acae9e148a2e6af5484a4cddce798bdd0bed4395946e42888e",
+  "model_sha256": "95057a0284b8dc3b983ffae84b14784e492818e6f57359e89e2c92a3dc596bbe",
+  "model_origin": "random-initialization",
+  "model_step": 400,
+  "mod_crc_and_resources": "PASS",
+  "game_runtime": "NOT TESTED",
+  "neural_conversation_quality": "FAIL"
+}

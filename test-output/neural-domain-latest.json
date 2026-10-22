@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-10-21T13:39:35.911060+00:00",
+  "origin": "random-initialization",
+  "step": 4000,
+  "parameters": 384288,
+  "samples": [
+    {
+      "question": "Hello! What can you do?",
+      "answer": "Kepyes dela ma a defrtiget artch troup der control group. The delotistion ation, asthe doers and does scont and the request.",
+      "seconds": 0.159,
+      "finish_reason": "stop",
+      "generated_tokens": 124
+    },
+    {
+      "question": "Cześć, kim jesteś?",
+      "answer": "Keframem, tawinie gra prawa utra ze; Sprawdź razywnymi koni graniczenia. Prati, kłegomonego strank dziuły le listruch sech Iting onns. Select wing when preat warith Group ID patand opens oped ort ort Group ID. Spawn Triggered and it tititit ariopoperiop alats an actititio tion tio t trio ariogggg",
+      "seconds": 0.436,
+      "finish_reason": "length",
+      "generated_tokens": 300
+    },
+    {
+      "question": "Explain what a group is in a level editor.",
+      "answer": "Static Check the the game mode a tin inspect controns istan tes to the acction. Dotststation contaion, the the confim therether congher. Dotatation ath ck the the the tomeracks taters ons.",
+      "seconds": 0.238,
+      "finish_reason": "stop",
+      "generated_tokens": 188
+    },
+    {
+      "question": "Napisz dwa zdania o tworzeniu poziomów.",
+      "answer": "Kolame Pracrate musi stra kauatacji i uko ko nitypu sth sprojecat nyctrolns.",
+      "seconds": 0.068,
+      "finish_reason": "stop",
+      "generated_tokens": 76
+    },
+    {
+      "question": "I am frustrated because this level is hard. Can you help?",
+      "answer": "Keeyffer deffect the stor amation an male mod in pagasion od resul. Reeese gups delay day tho fferatinsh tatfir the mation.",
+      "seconds": 0.155,
+      "finish_reason": "stop",
+      "generated_tokens": 123
+    },
+    {
+      "question": "What is the current Top 1 Demon?",
+      "answer": "Stawic Braza lesh do setoprzcza Group ID = 2, i Delay = 0 x360 = 1 ing. Suuuułe Trrgeret geret Set tret to Group 360 z z z z z jego z jego aremnienie z S. Niemiemieniej tosiejsie SoPDF kałącraze zetującą rozebą S. liebrawżną Spączemieśrz tniadze. steniawnia dom, dodzajekłaj gomodo t Stą ",
+      "seconds": 0.431,
+      "finish_reason": "length",
+      "generated_tokens": 300
+    }
+  ],
+  "evaluation": "Raw observations, no automatic claim of correctness. Ranking question deliberately bypasses tools to expose model limits."
+}
